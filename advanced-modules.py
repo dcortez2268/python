@@ -46,11 +46,9 @@ d = datetime.date.today()
 """
 math and random
 """
-
 """ random module """
 import random
 from random import randint
-
 random.seed(
     101
 )  # setting a seed allows us to ensure random numbers will show up in a series, 101 is a arbitrary number, anything can be set here
