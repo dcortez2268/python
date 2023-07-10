@@ -35,17 +35,27 @@ sc = s.copy()
 s.add(4)
 sc  # {1, 2, 3}
 """ difference """
-s.difference(sc)  # {4}
+# returns the difference of two or more sets as a new set
+new_set = s.difference(sc)  # new_set = {4}
 """ difference update"""
-s.difference_update(sc)  # 4
+# removes all elements of another set from this set
+s.difference_update(sc)  # s = {4}
+""" - operator is equivalent to .difference() method """
+new_set = s - sc # same as s.difference_update(sc), new_set = {4}
 """ discard """
-# removes an element from a set if it is a member
+# removes an element from a set if it is a member, DOES NOT raise a KeyError if element is not a member of a set
 s.discard(4)  # {}
+""" remove """
+# removes an element from a set if it is a member, raises a KeyError exception if element is not a member of a set
+s.remove(4)  # KeyError
 """ intersection """
+# returns the intersection of a set and the set of elements in an iterable
 s1 = {1, 2, 3}
 s2 = {1, 2, 4}
 s1.intersection(s2)  # {1, 2}
-{1, 2, 3}
+{1, 2}
+""" & operator is equivalent to .intersection() method """
+s1 & s2 # same as s1.intersection(s2), returns set of {1,2}
 """ intersection update"""
 # intersection_update will update a set with the intersection of itself and another.
 s1.intersection_update(s2)
@@ -62,8 +72,12 @@ s1.symmetric_difference(s2)  # {4}
 """ union """
 # returns a set with all elements that are in either set.
 s1.union(s2)  # {1, 2, 4}
+""" | operator used in place of union() """
+s1 | s2 # equivalent to s1.union(s2) {1, 2, 4}
 """ update """
 # updates a set with the union of itself and another set
+# update only works for iterable objects
+s1.update()
 
 
 """
@@ -92,7 +106,7 @@ list1.append([4, 5])  # list1 [1,2,3,4,[4, 5]]
 """ count """
 list1.count(2)  # 1, counts the number of occurrences in list
 """ extend """
-list1.extend(10, 11)  # # list1 [1,2,3,4,[4, 5], 10, 11]
+list1.extend([10, 11])  # # list1 [1,2,3,4,[4, 5], 10, 11]
 """ index """
 list1.index(2)  # 1
 list1.index(12)  # throws error if argument is not in list
@@ -110,13 +124,15 @@ list1  # [1,2, 'inserted', 3,4,[4, 5], 10, 11]
 # will sort your list in place:
 # The sort() method takes an optional argument for reverse sorting. Note this is different than simply reversing the order of items.
 list2.sort(reverse=True)
-""" copying by value vs reference"""
+""" shallow copy """
 x = [1, 2, 3]
 y = x.append(4)
-print(y)  # None, because the operation does not return a value, instead do this..
+print(y)  # None, because the operation does not return a value, don't do this..
+y = x # would copy x's reference, don't do this
 x = [1, 2, 3]
-y = x.copy()  # copies by value
+y = x.copy()  # shallow copy
 y.append(4)  # y == [1, 2, 3, 4]
 x  # [1, 2, 3]
-
-# using list(x) will return a copy by reference list
+# using list(x) will return a shallow copy as well
+""" join()"""
+'delimiter'.join(list_of_strings) # the delimiter is a string that will be inserted between each string in list_of_strings
