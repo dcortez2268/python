@@ -5,8 +5,6 @@ FUNCTIONS
 """ 
 syntax to define function 
 """
-
-
 def name_of_function(args):
     x = 1
     return x
@@ -15,8 +13,6 @@ def name_of_function(args):
 """ 
 map function 
 """
-
-
 # allows you to call a function on each element of an iterable object and return result of function
 def square(num):
     return num**2
@@ -48,7 +44,6 @@ LAMBDA EXPRESSIONS
 # syntax is:  lambda params : value to return
 def mult(num1, num2):
     return num1 * num2
-
 
 # is same as
 lambda num1, num2: num1 * num2

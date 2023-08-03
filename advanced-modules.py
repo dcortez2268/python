@@ -61,7 +61,7 @@ import math
 value = 4.35
 math.floor(value)  # 4
 math.ceil(value)  # 5
-round(value)  # 4
+round(value)  # 4, optional second parameter allows you to round to a specified number of decimal places
 math.pi  # 3.14
 math.e  # 2.718281828459045
 

@@ -54,9 +54,11 @@ LISTS
 # lists can be indexed, nested, concatenated, store different data types, and are mutable
 list_var = [1, 2, "some string"]
 
+list_var.
 """ LIST COMPREHENSIONS """
 # allow us to build out lists using a different notation
 # basically a one line for loop built inside of brackets
+new_list = [expression for item in iterable if condition]
 [x for x in "word"]  # ['w', 'o', 'r', 'd']
 [x**2 for x in range(0, 11)]  # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
